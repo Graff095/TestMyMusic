@@ -7,9 +7,10 @@
 import AVFoundation
 import UIKit
 
-class PlayerViewController: UIViewController {
-    public var song: Soung?
+class PlayerViewController: UIViewController,PlayerServiceDelegate {
     
+    public var song: Soung?
+
     @IBOutlet var holder: UIView!
     
 	var player: PlayerService = PlayerService.shared
@@ -73,8 +74,8 @@ class PlayerViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configure()
+        player.delegate = self
 	}
-    
    
     private func configure() {
         
@@ -173,6 +174,10 @@ class PlayerViewController: UIViewController {
 		setupProgressView()
 	}
    
+    func trackDidChange(newTrack: Soung) {
+        self.song = newTrack
+        updateData()
+    }
     
     func setupProgressView() {
            progressView.progress = 0.0

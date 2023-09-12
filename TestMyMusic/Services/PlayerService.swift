@@ -4,7 +4,7 @@ import AVFAudio
 class PlayerService: NSObject {
 
 	var songsList = [Soung]()
-
+    weak var delegate: PlayerServiceDelegate?
 	static var shared = PlayerService()
 
 	private var player: AVAudioPlayer?
@@ -30,6 +30,7 @@ class PlayerService: NSObject {
 			player?.play()
 			return
 		}
+        
 		lastPlayedTrack = song
 
 		let urlString = Bundle.main.path(forResource: song.name, ofType: "mp3") ?? ""
@@ -67,6 +68,8 @@ class PlayerService: NSObject {
 		}
 	}
 
+    @discardableResult
+    
 	func nextSong() -> Soung? {
 		guard let currentSong,
 			  let currentIndex = songsList.firstIndex(of: currentSong) else { return nil}
@@ -82,14 +85,19 @@ class PlayerService: NSObject {
 			return nextSoug
 		}
 	}
-
 }
 
 extension PlayerService: AVAudioPlayerDelegate {
     
 	func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        
         nextSong()
-      
+        let newTrack = currentSong
+        guard let newTrack = newTrack else {return}
+        delegate?.trackDidChange(newTrack: newTrack)
+        
 	}
+    
+}
+protocol PlayerServiceDelegate: AnyObject {
+    func trackDidChange(newTrack: Soung)
 }
