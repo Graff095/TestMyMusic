@@ -88,7 +88,8 @@ class PlayerService: NSObject {
 extension PlayerService: AVAudioPlayerDelegate {
     
 	func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-                nextSong()
+        
+        nextSong()
       
 	}
 }

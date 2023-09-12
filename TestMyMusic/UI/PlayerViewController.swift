@@ -15,7 +15,7 @@ class PlayerViewController: UIViewController {
 	var player: PlayerService = PlayerService.shared
     var timer: Timer!
     
-    // Элементы пользовательского интерфейса
+    //MARK: Элементы пользовательского интерфейса
     
     let backViewButton: UIButton = {
         let button = UIButton ()
@@ -64,10 +64,11 @@ class PlayerViewController: UIViewController {
         return progress
     }()
     
-    // Player controls
+    //MARK: Player controls
     let playPauseButton = UIButton()
     let nextButton = UIButton()
     let backPauseButton = UIButton()
+    
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -100,8 +101,8 @@ class PlayerViewController: UIViewController {
                                      height: 70)
         nameArtist.frame = CGRect(x: 10,
                                      y:  albumImageView.frame.size.height + 80,
-                                      width: holder.frame.size.width - 20,
-                                      height: 70)
+                                     width: holder.frame.size.width - 20,
+                                     height: 70)
         
         trekTime.frame = CGRect(x: 10,
                                       y: 350,
