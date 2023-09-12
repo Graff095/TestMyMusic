@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="TestMyMusic" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZB-8h-ngN">
+                        <rect key="frame" x="8" y="8.6666666666666643" width="84" height="83"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="84" id="eLW-lV-usP"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSU-7d-jam">
+                        <rect key="frame" x="100" y="26" width="222" height="48"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-ea-UIy">
+                        <rect key="frame" x="344" y="38" width="56" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aSU-7d-jam" firstAttribute="leading" secondItem="pZB-8h-ngN" secondAttribute="trailing" constant="8" symbolic="YES" id="4UE-bZ-foE"/>
+                    <constraint firstAttribute="trailing" secondItem="UKC-ea-UIy" secondAttribute="trailing" constant="20" symbolic="YES" id="7u6-5x-Cpn"/>
+                    <constraint firstItem="UKC-ea-UIy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9R5-hf-cgN"/>
+                    <constraint firstItem="pZB-8h-ngN" firstAttribute="centerY" secondItem="aSU-7d-jam" secondAttribute="centerY" id="D9Z-55-Ycc"/>
+                    <constraint firstItem="pZB-8h-ngN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-12" id="M8g-Qi-R7z"/>
+                    <constraint firstItem="pZB-8h-ngN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kop-om-Lc5"/>
+                    <constraint firstItem="aSU-7d-jam" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-44" id="snY-To-Pg5"/>
+                    <constraint firstItem="pZB-8h-ngN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-61.333333333333336" id="xOa-SQ-Okt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="TrekImageView" destination="pZB-8h-ngN" id="sxS-hT-R99"/>
+                <outlet property="TrekNameLabel" destination="aSU-7d-jam" id="JKa-Or-Gtg"/>
+                <outlet property="TrekTime" destination="UKC-ea-UIy" id="lMX-9t-6rT"/>
+            </connections>
+            <point key="canvasLocation" x="19.847328244274809" y="19.718309859154932"/>
+        </tableViewCell>
+    </objects>
+</document>
